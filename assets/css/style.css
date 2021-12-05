@@ -2,4 +2,132 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
+}
+/* VARIAVEIS */
+:root {
+    --header-altura: 72px;
+    --cor-principal: #069c54;
+    --cor-principal-alt: #048654;
+    --titulo-cor:#393939;
+    --text-color:#707070;
+    --text-color-light:#a6a6a6;
+    --body-color:#fbfefd;
+}
+
+
+/* CONFIGURAÇÕES PADRÕES */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--body-color);
+    color: var(--text-color);
+    width: 100%;
+}
+.btn {
+    display: inline-block;
+    background-color: var(--cor-principal);
+    color: #FFF;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: .3s;
+}
+.btn:hover {
+    background-color: var(--cor-principal-alt);
+}
+
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+    height: 100%;
+}
+h2 {
+    color: var(--titulo-cor);
+    font-size: 2.25rem;
+    margin-bottom: 36px;
+}
+span {
+    color: var(--cor-principal);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+/* HEADER */
+header {
+    height: 72px;
+    text-decoration: none;
+    width: 100%;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+header nav a, ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 1rem;
+}
+header nav a:hover, ul li a:hover {
+    color: var(--cor-principal);
+}
+header nav ul {
+    display: flex;
+}
+header nav ul li {
+    margin-left: 40px;
+}
+
+/* MAIN */
+
+main {
+    height: 640px;
+}
+
+main .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+}
+
+main .banner-texto h1 {
+    color: var(--cor-principal);
+    font-size: 4rem;
+    margin-bottom: 8px;
+}
+
+
+main .banner-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* SECTION SOBRE */
+section.sobre {
+    padding-top: 8rem;
+}
+section.sobre .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+section.sobre .sobre-img img {
+    width: 380px;
+    height: auto;
+    object-fit: cover;
+    border-radius:0.5rem ;
+}
+
+section.sobre .sobre-text p {
+    margin-bottom: 1.5rem;
 }
