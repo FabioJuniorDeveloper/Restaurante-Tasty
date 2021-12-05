@@ -50,6 +50,11 @@ h2 {
     font-size: 2.25rem;
     margin-bottom: 36px;
 }
+h3 {
+    color: var(--titulo-cor);
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
 span {
     color: var(--cor-principal);
     font-weight: 500;
@@ -112,8 +117,9 @@ main .banner-img img {
 }
 
 /* SECTION SOBRE */
-section.sobre {
+section.sobre, section.servicos, section.cardápio {
     padding-top: 8rem;
+    padding-bottom: 2rem;
 }
 section.sobre .container {
     display: grid;
@@ -131,3 +137,32 @@ section.sobre .sobre-img img {
 section.sobre .sobre-text p {
     margin-bottom: 1.5rem;
 }
+
+/* SECTION SERVIÇOS */
+
+ .section-title {
+    text-align: center;
+}
+
+section.servicos .servicos-text {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+section.servicos .servicos-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section.servicos .servicos-cards img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+    fill: var(--cor-principal);
+}
+section.servicos .servicos-cards p {
+    text-align: center;
+}
+
+/* SECTION CARDÁPIO */
