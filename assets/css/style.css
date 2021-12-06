@@ -13,6 +13,7 @@
     --text-color:#707070;
     --text-color-light:#a6a6a6;
     --body-color:#fbfefd;
+    --cards-color:#FFF;
 }
 
 
@@ -127,14 +128,14 @@ section.sobre .container {
     align-items: center;
 }
 
-section.sobre .sobre-img img {
+section.sobre .section-img img {
     width: 380px;
     height: auto;
     object-fit: cover;
     border-radius:0.5rem ;
 }
 
-section.sobre .sobre-text p {
+section.sobre .section-text p {
     margin-bottom: 1.5rem;
 }
 
@@ -166,3 +167,33 @@ section.servicos .servicos-cards p {
 }
 
 /* SECTION CARDÁPIO */
+
+section.cardápio .cardapio-text {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 210px);
+    gap: 4rem;
+    justify-content: center;
+}
+
+section.cardápio .cards-cardapio {
+    background-color: var(--cards-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgb(3 74 40 / 15%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+}
+
+section.cardápio .cards-cardapio img {
+    width: 130px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+section.cardápio .cards-cardapio h3 {
+    font-size: 1rem;
+}
+section.cardápio .cards-cardapio p {
+    margin-bottom: 0.5rem;
+}
