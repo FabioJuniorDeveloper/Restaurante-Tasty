@@ -40,7 +40,9 @@ body {
     background-color: var(--cor-principal-alt);
 }
 
-
+a:hover {
+    color: var(--cor-principal-alt);
+}
 .container {
     max-width: 1024px;
     margin: 0 auto;
@@ -49,7 +51,7 @@ body {
 h2 {
     color: var(--titulo-cor);
     font-size: 2.25rem;
-    margin-bottom: 36px;
+    margin-bottom: 1.5rem;
 }
 h3 {
     color: var(--titulo-cor);
@@ -60,6 +62,10 @@ span {
     color: var(--cor-principal);
     font-weight: 500;
     margin-bottom: 0.5rem;
+}
+section.sobre, section.servicos, section.cardápio, section.contato, footer {
+    padding-top: 8rem;
+    padding-bottom: 2rem;
 }
 
 /* HEADER */
@@ -75,13 +81,13 @@ header nav {
     justify-content: space-between;
     height: 100%;
 }
-header nav a, ul li a {
+header nav a, ul li a, a.btn-normal {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
     font-size: 1rem;
 }
-header nav a:hover, ul li a:hover {
+header nav a:hover, ul li a:hover, a.btn-normal:hover {
     color: var(--cor-principal);
 }
 header nav ul {
@@ -118,10 +124,6 @@ main .banner-img img {
 }
 
 /* SECTION SOBRE */
-section.sobre, section.servicos, section.cardápio {
-    padding-top: 8rem;
-    padding-bottom: 2rem;
-}
 section.sobre .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -213,4 +215,72 @@ section.cardápio .cards-cardapio a.btn {
     align-items: center;
     justify-content: center;
     border-radius: 0.5rem 0rem;
+}
+
+/* SECTION SOBRE (PARTE 2) */
+.app-section {
+    display: flex;
+    align-items: center;
+}
+.app-section a.app-btn, a.app-btn:nth-child(odd) {
+    width: 120px;
+    margin-right: 8px;
+}
+.app-section a.app-btn img {
+    width: 100%;
+}
+
+/* SECTION CONTATO */
+section.contato .container {
+    display: grid;
+    grid-template-columns: 1.75fr 1fr;
+    align-items: center;
+}
+.section-contato-btn {
+    justify-self: center;
+}
+
+/* FOOTER */
+
+footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+footer article:not(.sem-flex), address {
+    display: flex;
+    flex-direction: column;
+}
+footer .footer_logo {
+    font-size: 1.25rem;
+    color: var(--cor-principal);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+footer  span {
+    display: block;
+    font-size: 0.875rem;
+    margin: 0.25rem 0 1.5rem;
+    color: var(--text-color);
+}
+
+footer a.midia-social {
+    font-size: 1.5rem;
+    color: var(--titulo-cor);
+    margin-right: 1rem;
+    transition: 0.3s;
+}
+
+footer a.midia-social:hover {
+    color: var(--cor-principal);
+}
+
+footer a.btn-normal {
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+}
+footer h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
