@@ -17,11 +17,28 @@
 
 </head>
 
+<script type="text/javascript">
+    window.onload = function () {
+        document.querySelector(".menuMobile").addEventListener("click", function () {
+            if (document.querySelector("nav ul").style.display == 'flex') {
+                document.querySelector("nav ul").style.display = 'none'
+            } else {
+                document.querySelector("nav ul").style.display = 'flex'
+            }
+        });
+    };
+</script>
+
 <body>
     <header>
         <div class="container">
             <nav>
                 <a href="" class="logo">Fabio</a>
+                <div class="menuMobile">
+                    <div class="mm_line"></div>
+                    <div class="mm_line"></div>
+                    <div class="mm_line"></div>
+                </div>
                 <ul>
                     <li><a href="#Banner" class="btn-normal"> Home</a></li>
                     <li><a href="#Sobre" class="btn-normal"> Sobre</a></li>
@@ -122,7 +139,7 @@
         </div>
     </section>
 
-    <section class="sobre">
+    <section class="sobre aplicativo">
         <div class="container">
             <div class="section-img">
                 <img src="assets/images/movil-app.png" alt="comida">
@@ -194,7 +211,11 @@
                 </address>
 
             </article>
+
         </div>
+        <p>
+            © 2020 Bedimcode. All right reserved
+        </p>
     </footer>
 </body>
 

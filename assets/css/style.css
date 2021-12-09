@@ -4,6 +4,22 @@
     box-sizing: border-box;
     list-style: none;
 }
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #FFF;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--cor-principal);
+    border-radius: 4px;
+}
 /* VARIAVEIS */
 :root {
     --header-altura: 72px;
@@ -24,6 +40,15 @@ body {
     color: var(--text-color);
     width: 100%;
 }
+.menuMobile {
+    display: none;
+    width: 25px;
+    height: 25px;
+}
+.mm_line {
+    height: 3px;
+    background-color: var(--text-color);
+}
 .btn {
     display: inline-block;
     background-color: var(--cor-principal);
@@ -38,6 +63,7 @@ body {
 }
 .btn:hover {
     background-color: var(--cor-principal-alt);
+    color: #FFF;
 }
 
 a:hover {
@@ -73,6 +99,11 @@ header {
     height: 72px;
     text-decoration: none;
     width: 100%;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background-color: var(--body-color);
 }
 
 header nav {
@@ -101,6 +132,7 @@ header nav ul li {
 
 main {
     height: 640px;
+    margin-top: 72px;
 }
 
 main .container {
@@ -135,6 +167,7 @@ section.sobre .section-img img {
     height: auto;
     object-fit: cover;
     border-radius:0.5rem ;
+    max-width: 100%;
 }
 
 section.sobre .section-text p {
@@ -230,6 +263,8 @@ section.cardápio .cards-cardapio a.btn {
     width: 100%;
 }
 
+
+
 /* SECTION CONTATO */
 section.contato .container {
     display: grid;
@@ -284,3 +319,159 @@ footer h3 {
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
+
+footer p {
+    text-align: center;
+    margin-top: 3.5rem;
+    font-size: 0.813rem;
+    color: #A6A6A6;
+}
+/* DARK MODE */
+/* @media (prefers-color-scheme: dark) {
+    body, header, header nav a, ul li a, a.btn-normal {
+        background-color: #1D2521;
+        color: #C7D1CC;
+    }
+
+    h2, h3, section.cardápio .cards-cardapio span {
+        color: #F1F3F2;
+    }
+    section.cardápio .cards-cardapio {
+        background-color: #27302C;
+    }
+} */
+ 
+/* RESPONSIVIDADE */
+
+@media (min-width:769px) and (max-width:1024px) {
+    .container {
+        padding: 0 20px;
+    }
+
+}
+
+@media (min-width:426px) and (max-width:768px) {
+    html {
+        font-size: 14px;
+    }
+    .container {
+        padding: 0 20px;
+    }
+    .menuMobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    main .container {
+        grid-template-columns: 1fr 1fr;
+    }
+    main .banner-texto h1 {
+        font-size: 2.25rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        background-color: var(--body-color);
+    }
+    header nav ul li a.btn-normal {
+        display: block;
+        padding: 1rem;
+    }
+    header nav ul li {
+        margin: 0;
+    }
+    section.sobre .container {
+        gap: 1.5rem;
+        text-align: center;
+        grid-template-columns: 1fr;
+    }
+    section.aplicativo .app-section {
+       justify-content: center;
+    }
+    section.contato .container {
+        grid-template-columns: 1fr;
+    }
+    section.contato .section-text {
+        margin-bottom: 2rem;
+    }
+    .section-contato-btn {
+        justify-self: flex-start;
+    }
+    .section-img {
+        order: 1;
+    }
+}
+
+@media (max-width:425px) {
+    html {
+        font-size: 14px;
+    }
+    .container {
+        padding: 0 20px;
+    }
+    .menuMobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    main .container {
+        grid-template-columns: 1fr;
+    }
+    main .banner-texto h1 {
+        font-size: 2.25rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        background-color: var(--body-color);
+    }
+    header nav ul li a.btn-normal {
+        display: block;
+        padding: 1rem;
+    }
+    header nav ul li {
+        margin: 0;
+    }
+    section.sobre .container {
+        gap: 1.5rem;
+        text-align: center;
+        grid-template-columns: 1fr;
+    }
+    section.aplicativo .app-section {
+       justify-content: center;
+    }
+    section.contato .container {
+        grid-template-columns: 1fr;
+    }
+    section.contato .section-text {
+        margin-bottom: 2rem;
+    }
+    .section-contato-btn {
+        justify-self: flex-start;
+    }
+    .section-img {
+        order: 1;
+    }
+
+
+}
+   
+   
