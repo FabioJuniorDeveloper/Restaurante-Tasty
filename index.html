@@ -21,15 +21,24 @@
     window.onload = function () {
         document.querySelector(".menuMobile").addEventListener("click", function () {
             if (document.querySelector("nav ul").style.display == 'flex') {
-                document.querySelector("nav ul").style.display = 'none'
+                document.querySelector("nav ul").style.opacity = 0;
+                setTimeout(() => {
+                    document.querySelector("nav ul").style.display = 'none';
+                }, 500)
             } else {
-                document.querySelector("nav ul").style.display = 'flex'
+                document.querySelector("nav ul").style.opacity = 0;
+                document.querySelector("nav ul").style.display = 'flex';
+                setTimeout(() => {
+                    document.querySelector("nav ul").style.opacity = 1;
+                }, 0)
+
             }
         });
     };
 </script>
 
 <body>
+
     <header>
         <div class="container">
             <nav>
@@ -38,6 +47,10 @@
                     <div class="mm_line"></div>
                     <div class="mm_line"></div>
                     <div class="mm_line"></div>
+                </div>
+                <div class="cart-icon">
+                    <i class="bx bx-cart"></i>
+                    <span class="cart-item-count">0</span>
                 </div>
                 <ul>
                     <li><a href="#Banner" class="btn-normal"> Home</a></li>
@@ -49,6 +62,15 @@
             </nav>
         </div>
     </header>
+
+    <div class="modal-compra">
+        <div class="compra">
+            <div class="img-compra">
+                <img src="assets/images/seguro.png" alt="">
+            </div>
+            <p>Compra finalizada com sucesso</p>
+        </div>
+    </div>
 
     <main class="banner" id="Banner">
         <div class="container">
@@ -107,6 +129,78 @@
         </div>
     </section>
 
+    <section class="models" style="display: none;">
+        <div class="cardapio-container">
+            <div class="cards-cardapio">
+                <div class="cardapio--img">
+                    <img src="" alt="">
+                </div>
+                <div class="cardapio--name">
+                    <h3></h3>
+                </div>
+                <div class="cardapio--descripition">
+                    <p></p>
+                </div>
+                <div class="cardapio--price">
+                    <span></span>
+                </div>
+                <a href="" class="btn"><i class="bx bx-cart" style="color:#ffffff"></i></a>
+            </div>
+        </div>
+
+        <label class="productInfo-extras-itens">
+            <div class="extras">
+                <input type="checkbox" class="inputCheckbox">
+                <p class="extra-name"> teste</p>
+            </div>
+            <p class="extra-price">R$10 </p>
+        </label>
+
+        <div class="cart--item">
+            <div class="cart-item-img--name">
+                <img src="assets/images/plate1.png" alt="" srcset="">
+                <h3>Prato</h3>
+            </div>
+            <div class="cart-item--qtarea">
+                <div class="cart-item--qtmenos">-</div>
+                <div class="cart-item--qt">1</div>
+                <div class="cart-item--qtmais">+</div>
+            </div>
+        </div>
+    </section>
+    <section class="RestauranteWindowArea">
+        <section class="RestauranteWindowBody">
+            <div class="productBig">
+                <img src="assets/images/home.png" alt="">
+            </div>
+            <div class="productInfo">
+                <h1>Prato 1</h1>
+                <p class="productInfo--descripition"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
+                    praesentium. Amet quasi eos consequatur laborum nesciunt molestiae quod voluptatum, provident velit
+                    quas libero neque dolorum est sed odio in optio.</p>
+                <div class="productInfo--extra--additional">
+                    <h4>ADICIONAL</h4>
+                </div>
+                <div class="productInfo--pricearea">
+                    <h4 class="productInfo--price-text">PREÇO</h4>
+                    <div class="productInfo--price">
+                        <div class="productInfo--actualPrice">
+                            R$ 18.00
+                        </div>
+                        <div class="productInfo--qtarea">
+                            <div class="productInfo--qtmenos">-</div>
+                            <div class="productInfo--qt">1</div>
+                            <div class="productInfo--qtmais">+</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="productInfo--addButton">Adicionar ao carrinho</div>
+                <div class="productInfo--cancelButton">Cancelar</div>
+
+            </div>
+        </section>
+    </section>
+
     <section class="cardápio" id="Cardápio">
         <div class="container">
             <div class="section-title">
@@ -114,30 +208,32 @@
                 <h2>Nossos serviços incríveis</h2>
             </div>
             <div class="cardapio-text">
-                <div class="cards-cardapio">
-                    <img src="assets/images/plate1.png" alt="prato-1">
-                    <h3>Salada de churrasco</h3>
-                    <p>Prato delicioso</p>
-                    <span>R$35.00</span>
-                    <a href="" class="btn"><i class='bx bx-cart' style='color:#ffffff'></i></a>
-                </div>
-                <div class="cards-cardapio">
-                    <img src="assets/images/plate2.png" alt="prato-1">
-                    <h3>Salada de churrasco</h3>
-                    <p>Prato delicioso</p>
-                    <span>R$35.00</span>
-                    <a href="" class="btn"><i class='bx bx-cart' style='color:#ffffff'></i></a>
-                </div>
-                <div class="cards-cardapio">
-                    <img src="assets/images/plate3.png" alt="prato-1">
-                    <h3>Salada de churrasco</h3>
-                    <p>Prato delicioso</p>
-                    <span>R$35.00</span>
-                    <a href="" class="btn"><i class='bx bx-cart' style='color:#ffffff'></i></a>
-                </div>
+
             </div>
         </div>
     </section>
+    <aside class="show-menu">
+        <div class="buttonCellCancell">❌</div>
+        <h1>Seus Pedidos</h1>
+        <div class="cart-item-area">
+
+        </div>
+        <div class="cart-details">
+            <div class="cart--subtotal">
+                <span class="span-details">Subtotal</span>
+                <span class="price--subtotal">R$1000</span>
+            </div>
+            <div class="cart--desconto">
+                <span class="span-details">Desconto (10%)</span>
+                <span class="price--desconto">R</span>
+            </div>
+            <div class="cart--total">
+                <span class="span-details total-details">Total</span>
+                <span class="price--total">R$10000</span>
+            </div>
+            <a href="" class="btn btnFinalizarCompra">Finalizar Compra</a>
+        </div>
+    </aside>
 
     <section class="sobre aplicativo">
         <div class="container">
@@ -217,6 +313,11 @@
             © 2020 Bedimcode. All right reserved
         </p>
     </footer>
+    <script src="assets/script/pratosJson.js"></script>
+    <script src="assets/script/script.js"></script>
+
 </body>
+
+
 
 </html>
